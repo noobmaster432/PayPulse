@@ -18,10 +18,14 @@ export const SignIn = () => {
   const setUser = useSetRecoilState(userState);
 
   const handleSignIn = () => {
-    signIn(formData).then((res) => {
-      setUser(res);
-      navigate("/dashboard");
-    });
+    signIn(formData)
+      .then((res) => {
+        setUser(res);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error("Error signing up:", err);
+      });
   }
 
   return (

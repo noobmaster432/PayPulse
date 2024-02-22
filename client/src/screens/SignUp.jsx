@@ -20,10 +20,14 @@ export const SignUp = () => {
   const setUser = useSetRecoilState(userState);
 
   const handleSignUp = () => {
-    signUp(formData).then((res) => {
-      setUser(res);
-      navigate("/dashboard");
-    })
+    signUp(formData)
+      .then((res) => {
+        setUser(res);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error("Error signing up:", err);
+      });
   }
 
   return (

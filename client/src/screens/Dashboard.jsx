@@ -13,13 +13,16 @@ const Dashboard = () => {
 
   useEffect(() => {
     getBalance()
-    .then((res) => {
-      setVal(parseInt(res.balance));
-      setUserInfo({
-        firstName: res.account?.userId.firstName,
-        lastName: res.account?.userId.lastName,
+      .then((res) => {
+        setVal(parseInt(res.balance));
+        setUserInfo({
+          firstName: res.account?.userId.firstName,
+          lastName: res.account?.userId.lastName,
+        });
+      })
+      .catch((err) => {
+        console.error("Error signing up:", err);
       });
-    })
   }, []);
 
   return (

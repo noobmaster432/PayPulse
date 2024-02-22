@@ -11,9 +11,13 @@ const SendMoney = () => {
   const name = searchParams.size!=0 && searchParams.get("name");
 
   const handleTransfer = () => {
-    transferMoney({ to: id, amount }).then(() => {
-      navigate('/dashboard');
-    })
+    transferMoney({ to: id, amount })
+      .then(() => {
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error("Error signing up:", err);
+      });
   }
 
   return (
