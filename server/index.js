@@ -7,7 +7,10 @@ const cors = require('cors');
 const connectDB = require('./db/connect.js');
 const rootRouter = require('./routes/index.js');
 
-app.use(cors());
+app.use(cors({
+    origin: "*",
+}));
+
 app.use(express.json());
 
 app.use('/api/v1', rootRouter);
