@@ -2,6 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { logOut } from "../utils/func";
 import logo from "/icon.png";
+import { toast } from "react-toastify";
 
 export const AppBar = ({ user }) => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ export const AppBar = ({ user }) => {
   const logoutHandle = () => {
     logOut();
     navigate("/signin");
+    toast.success("User Logged out successfully");
   };
 
   return (

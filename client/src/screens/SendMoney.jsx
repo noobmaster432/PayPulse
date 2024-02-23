@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { transferMoney } from "../utils/func";
+import { toast } from "react-toastify";
 
 const SendMoney = () => {
   const [searchParams] = useSearchParams();
@@ -14,9 +15,11 @@ const SendMoney = () => {
     transferMoney({ to: id, amount })
       .then(() => {
         navigate("/");
+        toast.success("Money transferred successfully");
       })
       .catch((err) => {
         console.error("Error signing up:", err);
+        toast.error("Error transferring money");
       });
   };
 

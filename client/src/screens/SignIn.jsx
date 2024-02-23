@@ -8,6 +8,7 @@ import { signIn } from "../utils/func";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import userState from "../store/userAtom";
+import { toast } from "react-toastify";
 
 export const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -22,9 +23,11 @@ export const SignIn = () => {
       .then((res) => {
         setUser(res);
         navigate("/");
+        toast.success("Signed in successfully");
       })
       .catch((err) => {
         console.error("Error signing up:", err);
+        toast.error("Invalid credentials / Bad Gateway");
       });
   }
 
