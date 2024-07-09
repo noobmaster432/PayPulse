@@ -1,6 +1,6 @@
 # PayPulse : your e-payment gateway
 
-PayPulse is a comprehensive solution for online payments, enabling users to manage their finances efficiently and securely. This project utilizes a variety of technologies to deliver a robust and user-friendly experience.
+PayPulse is a comprehensive solution for online payments, designed to empower users to manage their finances with unparalleled efficiency and security.
 
 ### [Demo](https://paypulse.vercel.app)
 
